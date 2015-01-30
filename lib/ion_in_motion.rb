@@ -3,7 +3,7 @@ unless defined?(Motion::Project::Config)
 end
 
 require 'motion-cocoapods'
-require 'ion'
+# require 'ion'
 
 Motion::Project::App.setup do |app|
 
