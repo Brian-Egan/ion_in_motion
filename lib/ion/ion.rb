@@ -44,11 +44,14 @@ module Ion
         button = UIButton.rounded
         button.title = icons[icon_name.to_sym]
         button.font = font(opts[:font_size])
-        button.height = opts[:height] if opts[:height]
-        button.width = opts[:width] if opts[:width]
+        button.height = opts[:height].nil? ? 50 : opts[:height]
+        button.width = opts[:width].nil? ? 50 : opts[:width]
         button.titleColor = title_color
         button.backgroundColor = opts[:background_color]
-        button.accessibilityLabel = icon_name.to_s.gsub("_"," ")
+        acc_label = icon_name.to_s[4..-1].gsub("_"," ") if icon_name.to_s[0..3] == "ios_"
+        acc_label = icon_name.to_s[8..-1].gsub("_"," ") if icon_name.to_s[0..7] == "android_"
+        acc_label ||= icon_name.to_s.gsub("_"," ")
+        button.accessibilityLabel = acc_label
         return button
     end
 

@@ -4,12 +4,11 @@ This gem is a thin wrapped which makes it easy to use the wonderful IonIcons in 
 
 You can browse the available IonIcons [here](http://ionicons.com/)
 
-The gem relies completely on the [IonIcons CocoaPod](https://github.com/sweetmandm/ionicons-iOS).
+The gem relies on the [IonIcons CocoaPod](https://github.com/sweetmandm/ionicons-iOS).
 
----
 ## Usage  
 
-You can use **Ion in Motion** to quickly return a UILabel or UIImage.
+You can use **Ion in Motion** to quickly return a UILabel, UIImage, UIButton or UIFont.
 
 **UILabel**
 Use `Ion.label` to create UILabels. The icon name is required, and it takes `size` and `color` as optional parameters. The default is for a 18 pt font and black text
@@ -26,6 +25,16 @@ Use `Ion.image` to quickly create a UIImage. The icon name is required, and `siz
     image = Ion.image(:your_icon_name, size: 50, color: :orange.uicolor) #Returns UIImage
     image = Ion.image(:your_icon_name, color: "green")
     image = Ion.image(:your_icon_name)
+
+
+**UIButton**
+Use `Ion.button` to create UIButtons. The icon name is required, and optional arguments are `font_size`, `background_color`, `text_color`, `height` and `width`. The defaults are 18pt font, white background, black text and 50x50.
+
+    button = Ion.button(:your_icon_name) #Returns UIButton
+    button = Ion.button(:you_icon_name, height: 50, width: 100, text_color: :green.uicolor, background_color: "orange") # Returns a very ugly UIButton
+
+The button's accessibility label is automatically set to a stringified version of the icon name with any 'Android/iOS' prefix removed. i.e. A button with icon `:android_alarm_clock` will have the accessibility label `alarm clock`.
+
 
 **UIFont**
 Returns a UIFont instance. I'm not sure what use this is outside of `image` and `label` methods, but you can use it separately too. It takes a `size` parameter, but defaults to 18pt without it.

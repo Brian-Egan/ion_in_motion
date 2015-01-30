@@ -21,17 +21,30 @@ describe "Ion Methods" do
       Ion.button(:alert_circled).class.should == UIButton
     end
 
-    it "should be 50px tall" do
-      Ion.button(:alert_circled, height: 50).height.should == 50
+    it "should be 75px tall" do
+      Ion.button(:alert_circled, height: 75).height.should == 75
     end
 
     it "should be 100 px wide" do
       Ion.button(:alert_circled, width: 100).width.should == 100
     end
 
+     it "should be 50 px tall" do
+      Ion.button(:alert_circled).width.should == 50
+    end
+
+     it "should be 50 px wide" do
+      Ion.button(:alert_circled).width.should == 50
+    end
+
     it "should be have an accessibility label" do
       Ion.button(:alert_circled).accessibilityLabel.should == "alert circled"
     end
+
+    it "accessibility label should be formatted properly" do
+      Ion.button(:android_arrow_dropdown).accessibilityLabel.should == "arrow dropdown"
+    end
+
 
     it "should be have a white background" do
       Ion.button(:alert_circled).backgroundColor.should == :white.uicolor
