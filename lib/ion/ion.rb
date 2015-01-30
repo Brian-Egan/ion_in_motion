@@ -2,10 +2,20 @@ module Ion
 
   class << self
 
+    # Returns a UIFont instance using the IonIcons.ttf font.
+    # @param size [Integer] the font size, defaults to 18pt.
+    # @return [UIFont] use with love.
     def font(size=18)
        return IonIcons.fontWithSize(size)
     end
 
+
+    # Returns a UILabel with the requested icon.
+    #
+    # @param icon_name [Symbol] name of the icon. A list of names is available in "icon_codes.md". I.e. `:ios_bookmarks_outline`
+    # @param size [Integer] optional, font size.
+    # @param color [String] or [UIColor] , optional, text color
+    # @return [UILabel]
     def label(icon_name, opts={})
         opts[:size] ||= 18
         label = icons[icon_name.to_sym].uilabel
@@ -17,6 +27,12 @@ module Ion
         return label
     end
 
+    # Returns a UIImage with the requested icon.
+    #
+    # @param icon_name [Symbol] name of the icon. A list of names is available in "icon_codes.md". I.e. `:ios_bookmarks_outline`
+    # @param size [Integer] optional, image size (square).
+    # @param color [UIColor] , optional, image icon color
+    # @return [UIImage]
     def image(icon_name, opts={})
         opts[:size] ||= 124
         opts[:color] ||= :black.uicolor
@@ -24,6 +40,15 @@ module Ion
         return IonIcons.imageWithIcon(icon_name.to_sym, size: opts[:size], color: opts[:color])
     end
 
+    # Returns a UIButton with the requested icon.
+    #
+    # @param icon_name [Symbol] name of the icon. A list of names is available in "icon_codes.md". I.e. `:ios_bookmarks_outline`
+    # @param height [Integer] (optional)
+    # @param width [Integer] (optional)
+    # @param font_size [Integer] optional, image size (square). Defaults to 124x124
+    # @param text_color [UIColor] , optional, icon color. Defaults to black.
+    # @param background_color [UIColor] (optional) button background color. Defaults to white.
+    # @return [UIButton]
     def button(icon_name, opts={})
         opts[:font_size] ||= 18
         opts[:background_color] ||= :white.uicolor
@@ -55,14 +80,14 @@ module Ion
         return button
     end
 
-
+    # Helper to convert color name strings to UIColor
     def color_from_string(color)
         color = color.to_sym.uicolor
         color = :black.uicolor unless color.is_a? UIColor
         return color
     end
 
-
+    # Array of IonIcons with utc codes.
     def icons
          {
                 alert:  "\uf101",
