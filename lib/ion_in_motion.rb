@@ -7,10 +7,10 @@ require 'motion-cocoapods'
 
 Motion::Project::App.setup do |app|
 
-  if Dir.exists?("vendor/Pods/ionicons")
-    unless File.exists?("vendor/Pods/ionicons/ionicons/README.md")
-      load "lib/setup/setup.rb"
-      File.open("vendor/Pods/ionicons/ionicons/README.md", 'w') {|f| f.write(SetupIon.readme_text)}
+  if Dir.exists?("../vendor/Pods/ionicons")
+    unless File.exists?("../vendor/Pods/ionicons/ionicons/README.md")
+      load "setup/setup.rb"
+      File.open("../vendor/Pods/ionicons/ionicons/README.md", 'w') {|f| f.write(SetupIon.readme_text)}
     end
   end
 
