@@ -45,10 +45,11 @@ module Ion
         button.title = icons[icon_name.to_sym]
         button.font = font(opts[:font_size])
         button.height = opts[:height] if opts[:height]
-        button.width = opts[:height] if opts[:height]
+        button.width = opts[:width] if opts[:width]
         button.titleColor = title_color
         button.backgroundColor = opts[:background_color]
-        button.accessibilityLabel = icon_name.to_s.gsup("_"," ")
+        button.accessibilityLabel = icon_name.to_s.gsub("_"," ")
+        return button
     end
 
 

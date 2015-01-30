@@ -6,7 +6,7 @@ require 'sugarcube-color'
 require 'sugarcube-factories'
 
 $:.unshift("./lib/")
-require './lib/ion'
+require './lib/ion_in_motion'
 
 Motion::Project::App.setup do |app|
 
