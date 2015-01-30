@@ -24,6 +24,33 @@ module Ion
         return IonIcons.imageWithIcon(icon_name.to_sym, size: opts[:size], color: opts[:color])
     end
 
+    def button(icon_name, opts={})
+        opts[:font_size] ||= 18
+        opts[:background_color] ||= :white.uicolor
+        opts[:text_color] ||= :black.uicolor
+        if opts[:text_color]
+            if opts[:title_color]
+                title_color = opts[:title_color]
+            else
+                title_color = opts[:text_color]
+            end
+        elsif opts[:title_color]
+            title_color = opts[:title_color]
+        else
+            title_color = :black.uicolor
+        end
+        opts[:background_color] = color_from_string(opts[:background_color]) if opts[:background_color].is_a? String
+        title_color = color_from_string(title_color) if title_color.is_a? String
+        button = UIButton.rounded
+        button.title = icons[icon_name.to_sym]
+        button.font = font(opts[:font_size])
+        button.height = opts[:height] if opts[:height]
+        button.width = opts[:height] if opts[:height]
+        button.titleColor = title_color
+        button.backgroundColor = opts[:background_color]
+        button.accessibilityLabel = icon_name.to_s.gsup("_"," ")
+    end
+
 
     def color_from_string(color)
         color = color.to_sym.uicolor

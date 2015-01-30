@@ -3,6 +3,7 @@ require 'motion/project/template/ios'
 require 'bundler'
 require 'sugarcube-ui'
 require 'sugarcube-color'
+require 'sugarcube-factories'
 
 $:.unshift("./lib/")
 require './lib/ion'
