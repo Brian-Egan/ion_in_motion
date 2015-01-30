@@ -21,7 +21,6 @@ module Ion
         opts[:size] ||= 124
         opts[:color] ||= :black.uicolor
         opts[:color] = color_from_string(opts[:color]) if opts[:color].is_a? String
-        end
         return IonIcons.imageWithIcon(icon_name.to_sym, size: opts[:size], color: opts[:color])
     end
 
