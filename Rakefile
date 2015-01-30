@@ -1,10 +1,11 @@
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project/template/ios'
 require 'bundler'
-require 'bubble-wrap'
+require 'sugarcube-ui'
+require 'sugarcube-color'
 
 $:.unshift("./lib/")
-require './lib/atm'
+require './lib/ion'
 
 Motion::Project::App.setup do |app|
 
