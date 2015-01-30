@@ -38,4 +38,8 @@ To visually browse IonIcons, check out their [homepage](http://ionicons.com/), t
 
 ---
 ### Installation
-Simply add `gem 'ion_in_motion', :git => 'git://github.com/Brian-Egan/ion_in_motion.git'` to your project's Gemfile and `bundle install`. 
+Easy peasy.
+    1. Add `gem 'ion_in_motion', :git => 'git://github.com/Brian-Egan/ion_in_motion.git'` to your project's Gemfile.
+    2. Add `require 'Ion'` to your Rakefile.
+    3. Run `bundle install`. 
+    4. Enjoy!
