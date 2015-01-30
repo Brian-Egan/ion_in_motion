@@ -7,7 +7,8 @@ require 'motion-cocoapods'
 
 Motion::Project::App.setup do |app|
 
-   puts "Setting up IonIcons!"
+  puts "Setting up IonIcons! in #{Dir.pwd}"
+  # puts Dir.pwd
   if Dir.exists?("../vendor/Pods/ionicons")
     puts "That directory exists!"
     unless File.exists?("../vendor/Pods/ionicons/ionicons/README.md")
