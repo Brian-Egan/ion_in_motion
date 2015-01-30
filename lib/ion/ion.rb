@@ -1,5 +1,19 @@
 module Ion
 
+    # class Configure
+    #     def self.setup
+    #         puts "Setting up IonIcons!"
+    #         if Dir.exists?("../vendor/Pods/ionicons")
+    #             unless File.exists?("../vendor/Pods/ionicons/ionicons/README.md")
+    #                 puts "About to load setup file"
+    #               load "setup/setup.rb"
+    #               File.open("../vendor/Pods/ionicons/ionicons/README.md", 'w') {|f| f.write(SetupIon.readme_text)}
+    #             end
+    #       end
+    #   end
+
+    # end
+
   class << self
 
     # Returns a UIFont instance using the IonIcons.ttf font.
