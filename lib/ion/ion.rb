@@ -57,6 +57,7 @@ module Ion
         puts File.exists? "512/alert.png"
         puts File.exists? "alert.png"
         puts Dir.getwd
+        puts Dir.glob("*")
     end
 
     # # Returns a UIImage with the requested icon.
