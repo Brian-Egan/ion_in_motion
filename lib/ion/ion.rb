@@ -42,30 +42,22 @@ module Ion
         return label
     end
 
-
+    # # Returns a UIImage with the requested icon.
+    # #
+    # # @param icon_name [Symbol] name of the icon. A list of names is available in "icon_codes.md". I.e. `:ios_bookmarks_outline`
+    # # @param color [UIColor] , optional, image icon color. Default is black.
+    # # @return [UIImage]
     def image(icon_name, opts={})
         icon_name = icon_name.to_s if icon_name.is_a? Symbol
         icon_name = icon_name.gsub("_","-")
         icon_name = icon_name.gsub("ios-", "ios7-") if icon_name[0..3] == "ios-"
         color = opts[:color].nil? ? :black.uicolor : opts[:color]
         color = color_from_string(color) if color.is_a? String
-        return "512/#{icon_name}.png".uiimage
+        return "512/#{icon_name}.png".uiimage.overlay(color)
     end
 
-    def look_for
-        puts File.exists? "resources/512/alert.png"
-        puts File.exists? "512/alert.png"
-        puts File.exists? "alert.png"
-        puts Dir.getwd
-        puts Dir.glob("*")
-    end
 
-    # # Returns a UIImage with the requested icon.
-    # #
-    # # @param icon_name [Symbol] name of the icon. A list of names is available in "icon_codes.md". I.e. `:ios_bookmarks_outline`
-    # # @param size [Integer] optional, image size (square).
-    # # @param color [UIColor] , optional, image icon color
-    # # @return [UIImage]
+
     # def image(icon_name, opts={})
     #     opts[:size] ||= 124
     #     opts[:color] ||= :black.uicolor

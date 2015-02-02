@@ -20,9 +20,9 @@ Use `Ion.label` to create UILabels. The icon name is required, and it takes `siz
 
 
 **UIImage**
-Use `Ion.image` to quickly create a UIImage. The icon name is required, and `size` and `color` are optional arguments. Default is for a black 124x124 image. These are being created from the font, so it scales very nicely.
+Use `Ion.image` to quickly create a UIImage. The icon name is required, and `color` is an optional argument. Default is for a black 512x512 image. These are being created from 512x512 PNGs.
 
-    image = Ion.image(:your_icon_name, size: 50, color: :orange.uicolor) #Returns UIImage
+    image = Ion.image(:your_icon_name, color: :orange.uicolor) #Returns UIImage
     image = Ion.image(:your_icon_name, color: "green")
     image = Ion.image(:your_icon_name)
 
