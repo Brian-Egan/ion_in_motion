@@ -1,5 +1,12 @@
 # Ion In Motion
 
+**Update:** This gem is throwing some errors in RubyMotion when loaded from RubyGems instead of directly from the Git repo. If you'd like to use it and are getting the "Uninitalized Constant" error, put the following in your Gemfile in place of `gem "ion_in_motion":
+    gem "ion_in_motion", :git => "git://github.com/Brian-Egan/ion_in_motion.git"
+
+This is probably a fairly simple error, but I'm working against a deadline so I'll come back to it when I have the time.
+
+---
+
 This gem is a thin wrapped which makes it easy to use the wonderful IonIcons in a RubyMotion project. 
 
 You can browse the available IonIcons [here](http://ionicons.com/)
