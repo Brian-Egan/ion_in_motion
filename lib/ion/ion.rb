@@ -52,6 +52,13 @@ module Ion
         return "512/#{icon_name}.png".uiimage
     end
 
+    def look_for
+        puts File.exists? "resources/512/alert.png"
+        puts File.exists? "512/alert.png"
+        puts File.exists? "alert.png"
+        puts Dir.getwd
+    end
+
     # # Returns a UIImage with the requested icon.
     # #
     # # @param icon_name [Symbol] name of the icon. A list of names is available in "icon_codes.md". I.e. `:ios_bookmarks_outline`
