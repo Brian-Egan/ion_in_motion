@@ -42,22 +42,32 @@ module Ion
         return label
     end
 
-    # Returns a UIImage with the requested icon.
-    #
-    # @param icon_name [Symbol] name of the icon. A list of names is available in "icon_codes.md". I.e. `:ios_bookmarks_outline`
-    # @param size [Integer] optional, image size (square).
-    # @param color [UIColor] , optional, image icon color
-    # @return [UIImage]
+
     def image(icon_name, opts={})
-        opts[:size] ||= 124
-        opts[:color] ||= :black.uicolor
-        opts[:color] = color_from_string(opts[:color]) if opts[:color].is_a? String
-        puts "Here are our opts: #{opts}"
-        # return IonIcons.imageWithIcon(icon_name.to_sym, size: opts[:size], color: opts[:color])
-        icon_label = Ion.label(icon_name, color: opts[:color])
-        puts "label is #{icon_label}"
-        return icon_label.uiimage
+        icon_name = icon_name.to_s if icon_name.is_a? Symbol
+        icon_name = icon_name.gsub("_","-")
+        icon_name = icon_name.gsub("ios-", "ios7-") if icon_name[0..3] == "ios-"
+        color = opts[:color].nil? ? :black.uicolor : opts[:color]
+        color = color_from_string(color) if color.is_a? String
+        return "512/#{icon_name}.png".uiimage
     end
+
+    # # Returns a UIImage with the requested icon.
+    # #
+    # # @param icon_name [Symbol] name of the icon. A list of names is available in "icon_codes.md". I.e. `:ios_bookmarks_outline`
+    # # @param size [Integer] optional, image size (square).
+    # # @param color [UIColor] , optional, image icon color
+    # # @return [UIImage]
+    # def image(icon_name, opts={})
+    #     opts[:size] ||= 124
+    #     opts[:color] ||= :black.uicolor
+    #     opts[:color] = color_from_string(opts[:color]) if opts[:color].is_a? String
+    #     puts "Here are our opts: #{opts}"
+    #     # return IonIcons.imageWithIcon(icon_name.to_sym, size: opts[:size], color: opts[:color])
+    #     icon_label = Ion.label(icon_name, color: opts[:color])
+    #     puts "label is #{icon_label}"
+    #     return icon_label.uiimage
+    # end
 
     # Returns a UIButton with the requested icon.
     #
