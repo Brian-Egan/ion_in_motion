@@ -38,6 +38,7 @@ module Ion
             opts[:color] = color_from_string(opts[:color]) if opts[:color].is_a? String
         end
         label.textColor = opts[:color].nil? ? :black.uicolor : opts[:color]
+        label.text = icons[icon_name.to_sym]
         return label
     end
 
