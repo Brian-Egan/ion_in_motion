@@ -17,6 +17,7 @@ nbproject
 Gemfile.lock
 doc
 .yardoc
+*.gem
 
 
 vendor/Pods/*

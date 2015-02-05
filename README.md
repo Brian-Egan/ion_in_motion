@@ -1,9 +1,7 @@
 # Ion In Motion
 
-**Update:** This gem is throwing some errors in RubyMotion when loaded from RubyGems instead of directly from the Git repo. If you'd like to use it and are getting the "Uninitalized Constant" error, put the following in your Gemfile in place of `gem "ion_in_motion":
-    gem "ion_in_motion", :git => "git://github.com/Brian-Egan/ion_in_motion.git"
+**Update (2/5)** *Good news, everyone!* This gem actually works now! The earlier errors were because I'm a moron and didn't actually *include* my files in the gem when it was build. Chalk it up to my first time publishing a gem? Oops!
 
-This is probably a fairly simple error, but I'm working against a deadline so I'll come back to it when I have the time.
 
 ---
 
