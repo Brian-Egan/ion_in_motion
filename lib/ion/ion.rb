@@ -60,7 +60,7 @@ module Ion
         opts[:size] ||= 30.0
         lb = UILabel.alloc.initWithSize(CGSize.new(opts[:size], opts[:size]))
         lb.setFont(font(opts[:size]))
-        lb.text = icon[icon_name]
+        lb.text = icons[icon_name]
         lb.textAlignment = 1
         lb.textColor = color
         return lb.uiimage
