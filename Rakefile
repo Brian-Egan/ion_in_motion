@@ -13,7 +13,8 @@ Motion::Project::App.setup do |app|
   if Dir.exists?("vendor/Pods/ionicons")
     unless File.exists?("vendor/Pods/ionicons/ionicons/README.md")
       load "lib/setup/setup.rb"
-      File.open("vendor/Pods/ionicons/ionicons/README.md", 'w') {|f| f.write(SetupIon.readme_text)}
+      readme_text = Object.const_defined?('SetupIon') ? SetupIon.readme_text : "readme"
+      File.open("vendor/Pods/ionicons/ionicons/README.md", 'w') {|f| f.write(readme_text)}
     end
   end
 

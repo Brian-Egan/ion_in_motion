@@ -1,5 +1,6 @@
 # Ion In Motion
 
+## This gem is currently not production ready! I'll update soon.
 
 This gem is a thin wrapper which makes it easy to use the wonderful IonIcons in a RubyMotion project. 
 
