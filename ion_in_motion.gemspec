@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |gem|
   gem.name        = "ion_in_motion"
-  gem.version     = '0.1.8'
+  gem.version     = '0.2.0'
   gem.summary     = "Easy use of IonIcons in RubyMotion projects"
   gem.description = "Easily create UILabels, UIImages and UIButtons containing IonIcons in RubyMotion projects."
   gem.files         = `git ls-files`.split("\n")
